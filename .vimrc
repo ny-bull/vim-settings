@@ -1,9 +1,8 @@
 " インサートモードでのキーマップ
 inoremap jk <ESC>
 
-nnoremap j gj "j => gjに変換
-nnoremap k gk "k => gkに変換
-
+nnoremap j gj
+nnoremap k gk
 
 "mapleaderの設定
 let mapleader = "\<Space>"
@@ -40,6 +39,7 @@ syntax enable "ハイライトON
 set expandtab "タブ入力を複数の空白に置き換える
 set tabstop=4 "タブの空白数
 set shiftwidth=2 "自動インデントでずれる幅
+set belloff=all "音を消す
 
 
 " 検索系
