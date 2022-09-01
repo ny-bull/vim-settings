@@ -1,40 +1,54 @@
+" インサートモードでのキーマップ
 inoremap jk <ESC>
-let mapleader = " "
-filetype plugin indent on
-set encoding=utf-8
-set wrap
-set ambiwidth=double
-set clipboard=unnamedplus
-:set relativenumber
-set fenc=utf-8
-set nobackup
-set noswapfile
-set autoread
-set hidden
-set showcmd
+
+nnoremap j gj "j => gjに変換
+nnoremap k gk "k => gkに変換
 
 
-set number
-set virtualedit=onemore
-set smartindent
-set showmatch
-set wildmode=list:longest
+"mapleaderの設定
+let mapleader = "\<Space>"
 
-nnoremap j gj
-nnoremap k gk
 
-syntax enable
+" クリップボードとyankの紐付け
+set clipboard&
+set clipboard^=unnamedplus
 
-set expandtab
-set tabstop=4
-set shiftwidth=2
 
-set ignorecase
-set smartcase
-set incsearch
-set wrapscan
-set hlsearch
-nmap <ESC><ESC> :nohlsearch<CR><ESC>
+" 画面表示設定
+:set relativenumber "横に行番号を付与
+set showcmd "右下に入力中のコマンドが表示
+filetype plugin indent on "ファイル形式別にindentをオンにする 
+set ambiwidth=double "文字幅を2つ分にする
+set wrap "文字を画面端で折り返し
+
+
+" ファイル処理関連
+set nobackup " backupを作らないように
+set noswapfile " swpファイルを作成しない
+set autoread " 外部で変更された場合は読み込みし直す 
+set hidden "保存されていないファイルがあっても別ファイルを開ける
+set encoding=utf-8 "utf-8を読み込み
+set fenc=utf-8 "保存時に文字コードをutf-8にする 
+
+" 操作系
+set virtualedit=onemore "行末の1つ先までカーソルを進める
+set smartindent "改行時にインデントをいい感じにする 
+set showmatch "かっこの入力時に対応部分に飛ぶ 
+set wildmode=list:longest "ファイルを開く時の補完を設定
+syntax enable "ハイライトON
+
+set expandtab "タブ入力を複数の空白に置き換える
+set tabstop=4 "タブの空白数
+set shiftwidth=2 "自動インデントでずれる幅
+
+
+" 検索系
+set ignorecase "大文字小文字を区別しないで検索
+set smartcase "大文字があれば区別して検索
+set incsearch "入力中の文字列に合わせて移動する
+set wrapscan "最後尾まで検索したらトップに戻る
+set hlsearch "検索文字列のハイライト
+map <ESC><ESC> :nohlsearch<CR><ESC>
 
 
 " dein.vim settings {{{
